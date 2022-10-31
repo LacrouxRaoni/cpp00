@@ -15,7 +15,7 @@ FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 
 SRC_FILES	=	$(SYSTEM)application.cpp \
-				$(ENTITIES)ContactEntity.cpp
+				$(ENTITIES)ContactEntity.hpp
 
 SRC			=	$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ			=	$(SRC:$(SRC_DIR)/%.cpp=$(PATH_OBJ)/%.o)
