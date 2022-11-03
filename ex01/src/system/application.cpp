@@ -1,4 +1,5 @@
-#include <iostream>
+#include "application.hpp"
+
 
 static void displayMenu()
 {
@@ -9,18 +10,34 @@ static void displayMenu()
 	std::cout << "Option: ";
 }
 
+static bool getOption()
+{
+	char option; 
+	ContactService contact;
+
+	std::cin.get(option);
+	std::cin.ignore(1,'\n');
+	if (option == '0')
+		return false ;
+	else if (option == '1' || option == '2')
+	{
+		if (option == '1')
+		{
+			contact.addContact();
+		}
+	}
+	else
+		std::cout << "\ninvalid option\n" << std::endl;
+	return true;
+}
+
 int main(void)
 {
-	char i; 
 	std::cout << "WELCOME TO MY AWEASOME PHONEBOOK!" << std::endl;
 	while (true)
 	{
 		displayMenu();
-
-		
-		std::cin.get(i);
-		if (i == '0')
+		if (!getOption())
 			break ;
 	}
-
 }

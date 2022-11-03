@@ -1,55 +1,35 @@
+#ifndef CONTACTENTITY_HPP
+#define CONTACTENTITY_HPP
+
+#include <iostream>
+
 class ContactEntity
 {
 	private:
-		char *firstName;
-		char *lastName;
-		char *nickname;
-		char *phoneNumber;
-		char *darkestSecret;
-
-
+		std::string firstName;
+		std::string lastName;
+		std::string nickname;
+		std::string phoneNumber;
+		std::string darkestSecret;
+	
 	public:
-	ContactEntity()
-	{
-	}
+		ContactEntity();
+		ContactEntity(std::string firstName,
+					  std::string lastName,
+					  std::string nickname,
+					  std::string phoneNumber,
+					  std::string darkestSecret);
+		~ContactEntity();
 
-	ContactEntity(char *firstName,
-								 char *lastName,
-								 char *nickname,
-								 char *phoneNumber,
-								 char *darkestSecret)
-	{
-		this->firstName = firstName;
-		this->lastName = lastName;
-		this->nickname = nickname;
-		this->phoneNumber = phoneNumber;
-		this->darkestSecret = darkestSecret;
-	}
+	std::string getFirstName();
 
-	~ContactEntity()
-	{
-	}
+	std::string getLastName();
 
-	char *getFirstName(){
-		return firstName;
-	}
+	std::string getNickname();
 
-	char *getLastName(){
-		return lastName;
-	}
+	std::string getPhoneNumber();
 
-	char *getNickname(){
-		return nickname;
-	}
-
-	char *getPhoneNumber(){
-		return phoneNumber;
-	}
-
-	char *getDarkestSecret(){
-		return darkestSecret;
-	}
+	std::string getDarkestSecret();
 
 };
-
-
+#endif
