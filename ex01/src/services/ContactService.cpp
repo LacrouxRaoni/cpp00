@@ -43,7 +43,6 @@ static bool validPhoneNumber(std::string phoneNumber)
 
 void ContactService::addContact()
 {
-	ContactEntity contact;
 	std::string fName;
 	std::string lName;
 	std::string nickName;
@@ -66,5 +65,6 @@ void ContactService::addContact()
 		return ;
 	if (!validPhoneNumber(phoneNumber))
 		return ;
-	
+	ContactEntity contact(fName, lName, nickName, phoneNumber, darkestSecret);
+	std::cout << contact.getFirstName() << std::endl;	
 }
