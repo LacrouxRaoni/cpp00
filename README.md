@@ -1,4 +1,4 @@
-# CPP Pool 01/10
+# CPP Pool 00/08
 
 This is the first project at 42 school where you dive in C++ and OOP in 3 exercises.
 
