@@ -1,7 +1,6 @@
 #include "ContactEntity.hpp"
 
 	ContactEntity::ContactEntity(){
-
 	}
 
 

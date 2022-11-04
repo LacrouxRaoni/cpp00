@@ -1,6 +1,6 @@
 #include "ContactService.hpp"
 
-static bool validation(std::string fName,
+static bool checkIfIsBlank(std::string fName,
 					   std::string lName,
 					   std::string nickName,
 					   std::string phoneNumber,
@@ -25,6 +25,19 @@ static bool validation(std::string fName,
 	return true;
 }
 
+static bool checkIfIsAlphaNum(std::string word)
+{
+	size_t i;
+	for (i = 0; i < word.length(); i++) 
+	{
+		if (isalpha(word.at(i)) == 0) {
+			std::cout << "\nContact must contain AlphaNumeric.\n" << std::endl;
+			return false;
+		}
+	}
+	return true;
+}
+
 static bool validPhoneNumber(std::string phoneNumber)
 {
 	if (phoneNumber.size() > 20) {
@@ -32,7 +45,7 @@ static bool validPhoneNumber(std::string phoneNumber)
 	} else {
 		size_t i;
 		for (i = 0; i < phoneNumber.length(); i++) {
-			if (phoneNumber.at(i) < 48 || phoneNumber.at(i) > 57) {
+			if (isdigit(phoneNumber.at(i)) == 0) {
 				std::cout << "\nPhone number must have numbers only.\n" << std::endl;
 				return false;
 			}
@@ -41,8 +54,24 @@ static bool validPhoneNumber(std::string phoneNumber)
 	return true;
 }
 
+static bool validation(std::string fName,
+					   std::string lName,
+					   std::string nickName,
+					   std::string phoneNumber,
+					   std::string darkestSecret)
+{
+	if (!checkIfIsBlank(fName, lName, nickName, phoneNumber, darkestSecret))
+		return false;
+	if (!checkIfIsAlphaNum(fName) || !checkIfIsAlphaNum(lName) || !checkIfIsAlphaNum(nickName) || !checkIfIsAlphaNum(darkestSecret))
+		return false ;
+	if (!validPhoneNumber(phoneNumber))
+		return false;
+	return true;	
+}
+
 void ContactService::addContact()
 {
+	PhoneBookEntity phone;
 	std::string fName;
 	std::string lName;
 	std::string nickName;
@@ -63,8 +92,7 @@ void ContactService::addContact()
 
 	if (!validation(fName, lName, nickName, phoneNumber, darkestSecret))
 		return ;
-	if (!validPhoneNumber(phoneNumber))
-		return ;
 	ContactEntity contact(fName, lName, nickName, phoneNumber, darkestSecret);
-	std::cout << contact.getFirstName() << std::endl;	
+	phone.saveContact(contact);
+	
 }

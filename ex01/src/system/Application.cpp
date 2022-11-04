@@ -1,4 +1,4 @@
-#include "application.hpp"
+#include "Application.hpp"
 
 
 static void displayMenu()
@@ -14,6 +14,8 @@ static bool getOption()
 {
 	char option; 
 	ContactService contact;
+	PhoneBookService phone;
+	
 
 	std::cin.get(option);
 	std::cin.ignore(1,'\n');
@@ -22,9 +24,9 @@ static bool getOption()
 	else if (option == '1' || option == '2')
 	{
 		if (option == '1')
-		{
 			contact.addContact();
-		}
+		else
+			phone.searchOption();
 	}
 	else
 		std::cout << "\ninvalid option\n" << std::endl;

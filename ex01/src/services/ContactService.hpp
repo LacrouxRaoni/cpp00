@@ -8,7 +8,7 @@
 class ContactService
 {
 	public:
-		void addContact();
+		static void addContact();
 };
 
 #endif

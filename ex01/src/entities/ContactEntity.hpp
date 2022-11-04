@@ -30,6 +30,5 @@ class ContactEntity
 	std::string getPhoneNumber();
 
 	std::string getDarkestSecret();
-
 };
 #endif
