@@ -28,8 +28,10 @@ static bool getOption()
 		else
 			phone.searchOption();
 	}
-	else
+	else{
+		std::cout << "aqu: " << option << std::endl;
 		std::cout << "\ninvalid option\n" << std::endl;
+	}
 	return true;
 }
 

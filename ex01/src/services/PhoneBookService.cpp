@@ -15,6 +15,7 @@ void PhoneBookService::searchOption(){
 	contacts.printList();
 	std::cout << "\nChoose contact by index: ";
 	std::cin >> index;
+	std::cin.ignore(1, '\n');
 	if (index < 1 || index > 8)
 		std::cout << "\nInvalid Index\n" << std::endl;
 	else

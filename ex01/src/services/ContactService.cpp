@@ -30,8 +30,8 @@ static bool checkIfIsAlphaNum(std::string word)
 	size_t i;
 	for (i = 0; i < word.length(); i++) 
 	{
-		if (isalpha(word.at(i)) == 0) {
-			std::cout << "\nContact must contain AlphaNumeric.\n" << std::endl;
+		if (isascii(word.at(i)) == 0) {
+			std::cout << "\nInvalid Args.\n" << std::endl;
 			return false;
 		}
 	}
@@ -85,7 +85,7 @@ void ContactService::addContact()
 	std::getline(std::cin, lName);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, nickName);
-	std::cout << "Phone Number: ";
+	std::cout << "Phone Number (numbers only): ";
 	std::getline(std::cin, phoneNumber);
 	std::cout << "Darkest Secret: ";
 	std::getline(std::cin, darkestSecret);

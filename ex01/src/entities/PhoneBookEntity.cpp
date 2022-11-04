@@ -64,10 +64,15 @@ void PhoneBookEntity::printList(void)
 
 void PhoneBookEntity::printContactData(int index)
 {
-	std::cout << "index: " << index << std::endl;
-	std::cout << "First Name: " << phonebook[index - 1].getFirstName() << std::endl;
-	std::cout << "Last Name: " << phonebook[index - 1].getLastName() << std::endl;
-	std::cout << "NickName: " << phonebook[index - 1].getNickname() << std::endl;
-	std::cout << "Phone Number: " << phonebook[index - 1].getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << phonebook[index - 1].getDarkestSecret() << std::endl;
+	if (phonebook[index - 1].getFirstName().empty() == true)
+		std::cout << "Line is empty\n" << std::endl;
+	else 
+	{
+		std::cout << "index: " << index << std::endl;
+		std::cout << "First Name: " << phonebook[index - 1].getFirstName() << std::endl;
+		std::cout << "Last Name: " << phonebook[index - 1].getLastName() << std::endl;
+		std::cout << "NickName: " << phonebook[index - 1].getNickname() << std::endl;
+		std::cout << "Phone Number: " << phonebook[index - 1].getPhoneNumber() << std::endl;
+		std::cout << "Darkest Secret: " << phonebook[index - 1].getDarkestSecret() << "\n" << std::endl;
+	}
 }
