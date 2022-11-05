@@ -14,11 +14,13 @@ class PhoneBookEntity
 		PhoneBookEntity();
 		~PhoneBookEntity();
 
+	private:
+		static std::string columnCustomize(std::string word);
+		static void printData(ContactEntity contact, int i);
 
-	void saveContact(ContactEntity contact);
-
-	void printList(void);
-	
-	void printContactData(int index);
+	public:
+		void saveContact(ContactEntity contact);
+		void printList(void);
+		void printContactData(int index);
 };
 #endif

@@ -22,7 +22,7 @@ void  PhoneBookEntity::saveContact(ContactEntity contact)
 	std::cout << "\nContact saved with success\n" << std::endl;
 }
 
-static std::string columnCustomize(std::string word)
+std::string PhoneBookEntity::columnCustomize(std::string word)
 {
 	int size;
 	std::string line;
@@ -40,7 +40,7 @@ static std::string columnCustomize(std::string word)
 	return line;
 }
 
-static void printData(ContactEntity contact, int i)
+void PhoneBookEntity::printData(ContactEntity contact, int i)
 {
 	std::cout << "         " << (i + 1) << "|";
 	std::cout << columnCustomize(contact.getFirstName()) << "|";

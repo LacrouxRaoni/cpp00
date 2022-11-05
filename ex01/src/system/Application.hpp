@@ -5,5 +5,7 @@
 #include "../services/ContactService.hpp"
 #include "../services/PhoneBookService.hpp"
 
+static void displayMenu();
+static bool getOption();
 
 #endif

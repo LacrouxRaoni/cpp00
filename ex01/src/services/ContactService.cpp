@@ -1,6 +1,6 @@
 #include "ContactService.hpp"
 
-static bool checkIfIsBlank(std::string fName,
+bool ContactService::checkIfIsBlank(std::string fName,
 					   std::string lName,
 					   std::string nickName,
 					   std::string phoneNumber,
@@ -25,7 +25,7 @@ static bool checkIfIsBlank(std::string fName,
 	return true;
 }
 
-static bool checkIfIsAlphaNum(std::string word)
+bool ContactService::checkIfIsAlphaNum(std::string word)
 {
 	size_t i;
 	for (i = 0; i < word.length(); i++) 
@@ -38,7 +38,7 @@ static bool checkIfIsAlphaNum(std::string word)
 	return true;
 }
 
-static bool validPhoneNumber(std::string phoneNumber)
+bool ContactService::validPhoneNumber(std::string phoneNumber)
 {
 	if (phoneNumber.size() > 20) {
 		std::cout << "\nPhone number can't have more than 20 characters\n" << std::endl;
@@ -54,7 +54,7 @@ static bool validPhoneNumber(std::string phoneNumber)
 	return true;
 }
 
-static bool validation(std::string fName,
+bool ContactService::validation(std::string fName,
 					   std::string lName,
 					   std::string nickName,
 					   std::string phoneNumber,
