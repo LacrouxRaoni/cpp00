@@ -36,4 +36,6 @@ fclean: clean
 
 re: fclean all
 
+#./dreamJob | awk '{ print $2 }' > b && cat 19920104_091532.log | awk '{ print $2 }' > a && diff a b
+
 .PHONY: all clean fclean re

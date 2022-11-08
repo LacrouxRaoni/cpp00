@@ -7,19 +7,19 @@ bool ContactService::checkIfIsBlank(std::string fName,
 					   std::string darkestSecret)
 {
 	if(fName.empty()){
-		std::cout << "Fist Name can't be blank";
+		std::cout << "\nFist Name can't be blank\n" << std::endl;
 		return false;
 	} else if (lName.empty()) {
-		std::cout << "Last Name can't be blank";
+		std::cout << "\nLast Name can't be blank\n" << std::endl;
 		return false;
 	} else if (nickName.empty()) {
-		std::cout << "Nickname can't be blank";
+		std::cout << "\nNickname can't be blank\n" << std::endl;
 		return false;
 	} else if (phoneNumber.empty()) {
-		std::cout << "Phone Number can't be blank";
+		std::cout << "\nPhone Number can't be blank\n" << std::endl;
 		return false;
 	} else if (darkestSecret.empty()) {
-		std::cout << "Darkest secret can't be blank";
+		std::cout << "\nDarkest secret can't be blank\n" << std::endl;
 		return false;
 	}
 	return true;
