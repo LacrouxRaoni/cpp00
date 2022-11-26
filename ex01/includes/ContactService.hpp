@@ -2,8 +2,8 @@
 #define CONTACTSERVICE_HPP
 
 #include <iostream>
-#include "../entities/ContactEntity.hpp"
-#include "../entities/PhoneBookEntity.hpp"
+#include "ContactEntity.hpp"
+#include "PhoneBookEntity.hpp"
 
 class ContactService
 {

@@ -2,7 +2,7 @@
 #define PHONEBOOKSERVICE_HPP
 
 #include <iostream>
-#include "../entities/PhoneBookEntity.hpp"
+#include "PhoneBookEntity.hpp"
 
 class PhoneBookService
 {
