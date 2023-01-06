@@ -29,7 +29,6 @@ static bool getOption()
 			phone.searchOption();
 	}
 	else{
-		std::cout << "aqu: " << option << std::endl;
 		std::cout << "\ninvalid option\n" << std::endl;
 	}
 	return true;
